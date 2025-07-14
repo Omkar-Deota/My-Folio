@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../assets/img.jpg";
+import img from "../assets/images/self.png";
 import { HERO_CONTENT } from "../constants";
 import "animate.css";
 
@@ -30,7 +30,7 @@ const Hero = () => {
               {HERO_CONTENT}
             </p>
             <a
-              href="/Omkar_Deota.pdf"
+              href="../assets/Omkar_Deota.pdf"
               target="_blank"
               rel="noopener noreferrer"
               download

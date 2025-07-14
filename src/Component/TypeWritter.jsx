@@ -31,13 +31,6 @@ const TypewriterText = ({ text }) => {
           {char}
         </motion.span>
       ))}
-      <motion.span
-        className="ml-1"
-        animate={{ opacity: [0, 1, 0] }}
-        transition={{ repeat: Infinity, duration: 0.8 }}
-      >
-        |
-      </motion.span>
     </p>
   );
 };

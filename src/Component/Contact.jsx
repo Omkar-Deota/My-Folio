@@ -8,20 +8,24 @@ export const ContactForm = () => {
       whileInView={{ opacity: 1, y: 0 }}
       initial={{ opacity: 0, y: 100 }}
       transition={{ duration: 1 }}
-      className="border-t border-stone-500 p-4 flex justify-end"
+      className="border-t border-stone-500 p-4 flex justify-end gap-4 mx-4"
     >
-      <div className="flex flex-col gap-1">
-        <p className="flex items-center gap-2 text-stone-300">
-          <CiLocationOn /> Raipur, Chhattisgarh, India
-        </p>
-        <p className="flex items-center gap-2 text-stone-300">
-          <HiOutlineMail /> omkardeota@gmail.com
-        </p>
-        <p className="flex items-center gap-2 text-stone-300">
-          <MdPhoneInTalk />
-          +91 9583377227
-        </p>
-      </div>
+      <p className="flex items-center gap-2 text-stone-300">
+        <CiLocationOn /> Bhubaneswar, Odisha, India
+      </p>
+      <a
+        className="flex items-center gap-2 text-stone-3000"
+        href="mailto:omkardeota@gmail.com"
+      >
+        <HiOutlineMail /> omkardeota@gmail.com
+      </a>
+      <a
+        className="flex items-center gap-2 text-stone-300"
+        href="tel:+919583377227"
+      >
+        <MdPhoneInTalk />
+        +91 9583377227
+      </a>
     </motion.div>
   );
 };
