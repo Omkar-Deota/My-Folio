@@ -8,7 +8,7 @@ export const ContactForm = () => {
       whileInView={{ opacity: 1, y: 0 }}
       initial={{ opacity: 0, y: 100 }}
       transition={{ duration: 1 }}
-      className="border-t border-stone-500 p-4 flex justify-end gap-4 mx-4"
+      className="border-t border-stone-500 p-4 flex justify-end max-md:flex-col max-md:items-end gap-4 mx-4"
     >
       <p className="flex items-center gap-2 text-stone-300">
         <CiLocationOn /> Bhubaneswar, Odisha, India

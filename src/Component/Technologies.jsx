@@ -26,12 +26,12 @@ const IconVariant = (duration) => ({
 
 const Technologies = () => {
   return (
-    <div className="pb-20">
+    <div className="pb-10 ">
       <motion.h1
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 0.6 }}
-        className="my-20 text-center text-4xl "
+        className="my-20 text-center text-4xl font-bold tracking-wide bg-white text-black w-fit px-3 py-1 rounded-lg mx-auto"
       >
         Technologies
       </motion.h1>
@@ -125,10 +125,18 @@ const Technologies = () => {
           className="p-4"
           initial="initial"
           animate="animate"
-          variants={IconVariant(12)}
+          variants={IconVariant(13)}
         >
-          <p className="text-7xl  text-[#50a8f7]">And counting...</p>
+          <p className=" text-5xl  text-[#50a8f7]">ASP.NET</p>
         </motion.div>
+      </motion.div>
+      <motion.div
+        className="p-4"
+        initial="initial"
+        animate="animate"
+        variants={IconVariant(2)}
+      >
+        <p className="text-7xl  text-[#50a8f7] text-center">And counting...</p>
       </motion.div>
     </div>
   );

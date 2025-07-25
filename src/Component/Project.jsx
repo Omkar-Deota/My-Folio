@@ -9,7 +9,7 @@ const Project = () => {
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 0.6 }}
-        className="my-20 text-center text-4xl"
+        className="my-20 text-center text-4xl font-bold tracking-wide bg-white text-black w-fit px-3 py-1 rounded-lg mx-auto"
       >
         Projects
       </motion.h2>
@@ -17,7 +17,7 @@ const Project = () => {
         {PROJECTS.map((project, index) => (
           <div
             key={index}
-            className="mb-8 flex flex-wrap justify-center mx-auto bg-stone-800 p-5 md:bg-transparent w-11/12"
+            className="mb-8 flex flex-wrap justify-center mx-auto bg-stone-800 p-5 md:bg-transparent w-11/12 rounded-2xl"
           >
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
@@ -30,7 +30,7 @@ const Project = () => {
                 width={250}
                 height={250}
                 alt={project.title}
-                className="mb-6 rounded"
+                className="mb-6 rounded-xl max-md:mx-auto"
               />
             </motion.div>
             <motion.div
@@ -40,11 +40,12 @@ const Project = () => {
               className="w-full max-w-xl lg:w-3/4"
             >
               <h3 className="mb-2 font-semibold text-2xl">
-                {project.title}{" "}
+                <p className="max-md:text-center">{project.title}</p>
                 {project.url && (
                   <a
                     href={project.url}
                     className="text-sm text-neutral-400 italic"
+                    target="_blank"
                   >
                     (Live Preview)
                   </a>

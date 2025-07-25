@@ -9,13 +9,15 @@ export const EXPERIENCES = [
   {
     year: "Sept 2024 - Present",
     role: "Associate SDE | SDE Intern",
-    company: "Magure Softwares Private Limited",
+    company: "Magure Tech India",
     description:
       "Developed a comprehensive Survey Management Portal for Hawkamah – The Institute for Governance, one of the largest governance institutes in the Middle East in collaboration with DIFC Dubai using MERN stack technologies and leveraging Azure and OAuth services for enhanced security and scalability. Delivered high-quality, while ensuring seamless integration of front-end designs with back-end functionalities with code reviews. Conducted performance analysis to identify and resolve bottlenecks, enhancing system efficiency. Solely managed the frontend development for a data monetization project Xtend by DIFC Dubai, ensuring responsive designs and seamless user experiences across devices with API integration.Worked on Ignyte, a dynamic marketplace platform for startups to register, raise funding, create events, and expand businesses.Enabled students and professionals to launch companies, secure investments, and manage.",
     technologies: [
       "ReactJs",
       "Tailwind",
       "NextUI",
+      "Material UI",
+      "Mud UI",
       "NodeJs",
       "ExpressJs",
       "PostgreSQL",
@@ -27,6 +29,11 @@ export const EXPERIENCES = [
       "TypeORM",
       "NeonDB",
       "Azure",
+      "Asp.Net",
+      "Entity Framework",
+      "Clean Architecture",
+      "Razor",
+      "CQRS Patterns",
     ],
     links: [
       {
@@ -122,4 +129,3 @@ export const PROJECTS = [
     url: "https://virtuality-fe.onrender.com",
   },
 ];
-

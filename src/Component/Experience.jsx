@@ -1,5 +1,3 @@
-import React from "react";
-// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { EXPERIENCES } from "../constants";
 
@@ -10,7 +8,7 @@ const Experience = () => {
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 0.6 }}
-        className="my-20 text-center text-4xl"
+        className="my-20 text-center text-4xl max-sm:text-2xl font-bold tracking-wide bg-white text-black w-fit px-3 py-1 rounded-lg mx-auto"
       >
         Professional Experiences
       </motion.h2>
@@ -18,7 +16,7 @@ const Experience = () => {
         {EXPERIENCES.map((experience, index) => (
           <div
             key={index}
-            className="mb-8 flex flex-wrap mx-auto lg:justify-start bg-stone-800 p-5 md:bg-transparent w-11/12"
+            className="mb-8 flex flex-wrap mx-auto lg:justify-start bg-stone-800 p-5 md:bg-transparent w-11/12 rounded-2xl"
           >
             <motion.div
               whileInView={{ opacity: 1, x: 0 }}
