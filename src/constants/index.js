@@ -2,6 +2,7 @@ import project1 from "../assets/projects/project-1.png";
 import project2 from "../assets/projects/api.png";
 import project3 from "../assets/projects/train-removebg-preview-removebg-preview.png";
 import project4 from "../assets/images/logo.png";
+import icon from "../assets/images/icon.svg";
 export const HERO_CONTENT =
   "I’m a passionate Software Engineer with a strong problem - solving mindset and expertise in C++, React, and TypeScript.With hands - on experience in full - stack development, I have built scalable applications for leading organizations, including Hawkamah(DIFC Dubai) and Hindalco Industries(Aditya Birla Group). I thrive on building impactful solutions, from optimizing coal management systems with ML to developing marketplace platforms for startups.My work has been recognized at the Smart India Hackathon 2023, where my team won the national - level championship by solving real - world challenges for the Ministry of Coal, Govt.of India. I’m always excited to collaborate, innovate, and push boundaries in software development.Let’s connect and build something amazing! 🚀";
 
@@ -11,7 +12,7 @@ export const EXPERIENCES = [
     role: "Associate SDE | SDE Intern",
     company: "Magure Tech India",
     description:
-      "Developed a comprehensive Survey Management Portal for Hawkamah – The Institute for Governance, one of the largest governance institutes in the Middle East in collaboration with DIFC Dubai using MERN stack technologies and leveraging Azure and OAuth services for enhanced security and scalability. Delivered high-quality, while ensuring seamless integration of front-end designs with back-end functionalities with code reviews. Conducted performance analysis to identify and resolve bottlenecks, enhancing system efficiency. Solely managed the frontend development for a data monetization project Xtend by DIFC Dubai, ensuring responsive designs and seamless user experiences across devices with API integration.Worked on Ignyte, a dynamic marketplace platform for startups to register, raise funding, create events, and expand businesses.Enabled students and professionals to launch companies, secure investments, and manage.",
+      "Developed a comprehensive Survey Management Portal for Hawkamah – The Institute for Governance, one of the largest governance institutes in the Middle East in collaboration with DIFC Dubai using MERN stack technologies and leveraging Azure and OAuth services for enhanced security and scalability. Worked on Ignyte, a platform for in Dubai to support startups and companies by providing a dynamic marketplace for registration, funding, and event creation. Also Worked On DIFC+ mobile app. Delivered high-quality, while ensuring seamless integration of front-end designs with back-end functionalities with code reviews. Conducted performance analysis to identify and resolve bottlenecks, enhancing system efficiency. Solely managed the frontend development for a data monetization project Xtend by DIFC Dubai, ensuring responsive designs and seamless user experiences across devices with API integration.Worked on Ignyte, a dynamic marketplace platform for startups to register, raise funding, create events, and expand businesses.Enabled students and professionals to launch companies, secure investments, and manage.",
     technologies: [
       "ReactJs",
       "Tailwind",
@@ -47,6 +48,10 @@ export const EXPERIENCES = [
       {
         name: "Ignyte",
         link: "https://www.ignyte.ae/",
+      },
+      {
+        name: "DIFC+ Mobile App",
+        link: "#",
       },
     ],
   },
@@ -100,10 +105,10 @@ export const PROJECTS = [
     ],
   },
   {
-    title: "PropStream",
+    title: "OAuth Industry Based security implementation",
     image: project2,
     description:
-      "Created a platform for data monetization for business. The data can be accessed by creating API for the same and usage can be tracked through this application.",
+      "Created a platform for implementation of industry grade authentication system using OAuth 2.0, understood the concept of OIDC and tokens.",
     technologies: [
       "Reactjs",
       "Nodejs",
@@ -112,6 +117,7 @@ export const PROJECTS = [
       "Auth0",
       "NextUI",
     ],
+    url: "https://fe-apimonetizer.onrender.com",
   },
   {
     title: "Railway Rake Scheduling",
@@ -127,5 +133,25 @@ export const PROJECTS = [
       "A front-end based landing page to showcase subscription models for a virtual reality company. The page is designed to be responsive and user-friendly, providing an engaging experience for potential customers.",
     technologies: ["React", "Tailwind CSS", "TypeScript"],
     url: "https://virtuality-fe.onrender.com",
+  },
+  {
+    title: "New Alpha Kids School",
+    image: icon,
+    description:
+      "Created a complete ERP platform for a school using MERN stack and deployed over the internet having admin and client portal with proper RBAC implementation.",
+    technologies: [
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "Nodejs",
+      "PostgresSQL",
+      "NeonDB",
+      "Docker",
+      "Prisma",
+      "CI/CD",
+      "Deployement",
+      "SEO",
+    ],
+    url: "https://www.newalphakids.com",
   },
 ];

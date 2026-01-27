@@ -8,6 +8,8 @@ import {
   TbBrandMysql,
   TbBrandNodejs,
   TbBrandTailwind,
+  TbBrandFlutter,
+  TbBrandDocker,
 } from "react-icons/tb";
 import { FaGithub, FaPython } from "react-icons/fa";
 import { SiTypescript, SiJira } from "react-icons/si";
@@ -128,6 +130,22 @@ const Technologies = () => {
           variants={IconVariant(13)}
         >
           <p className=" text-5xl  text-[#50a8f7]">ASP.NET</p>
+        </motion.div>
+        <motion.div
+          className="p-4"
+          initial="initial"
+          animate="animate"
+          variants={IconVariant(14)}
+        >
+          <TbBrandFlutter className=" text-7xl  text-sky-400" />
+        </motion.div>
+        <motion.div
+          className="p-4"
+          initial="initial"
+          animate="animate"
+          variants={IconVariant(15)}
+        >
+          <TbBrandDocker className=" text-7xl  text-sky-800" />
         </motion.div>
       </motion.div>
       <motion.div
