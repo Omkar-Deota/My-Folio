@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function AvatarParallax({
   src,
@@ -9,14 +9,26 @@ export default function AvatarParallax({
 }) {
   const wrapRef = useRef(null);
   const sizeValue = typeof size === "number" ? `${size}px` : size;
+  const [isDesktop, setIsDesktop] = useState(false);
 
   const target = useRef({ x: 0, y: 0, rX: 0, rY: 0 });
   const current = useRef({ x: 0, y: 0, rX: 0, rY: 0 });
   const rafRef = useRef(null);
 
   useEffect(() => {
+    const mql = window.matchMedia("(min-width: 1024px)");
+    const onChange = (e) => setIsDesktop(e.matches);
+    setIsDesktop(mql.matches);
+    mql.addEventListener("change", onChange);
+    return () => mql.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
     const el = wrapRef.current;
-    if (!el) return;
+    if (!el || !isDesktop) {
+      if (el) el.style.transform = "none";
+      return;
+    }
 
     const onMove = (e) => {
       const cx = window.innerWidth / 2;
@@ -60,21 +72,22 @@ export default function AvatarParallax({
       window.removeEventListener("pointermove", onMove);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
-  }, [strength, rotate, smooth]);
+  }, [strength, rotate, smooth, isDesktop]);
 
   return (
     <div
       style={{
-        position: "fixed",
-        right: 40,
-        bottom: 30,
+        position: isDesktop ? "fixed" : "relative",
+        right: isDesktop ? 40 : "auto",
+        bottom: isDesktop ? 30 : "auto",
         width: sizeValue,
         height: sizeValue,
         maxWidth: "calc(100vw - 32px)",
         maxHeight: "calc(100vh - 120px)",
         pointerEvents: "none",
-        zIndex: 9999,
+        zIndex: isDesktop ? 9999 : "auto",
         perspective: 800,
+        margin: isDesktop ? 0 : "0 auto",
       }}
     >
       <div
