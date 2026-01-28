@@ -40,12 +40,16 @@ const Project = () => {
               className="w-full max-w-xl lg:w-3/4"
             >
               <h3 className="mb-2 font-semibold text-2xl">
-                <p className="max-md:text-center">{project.title}</p>
+                <span className="block max-md:text-center">
+                  {project.title}
+                </span>
                 {project.url && (
                   <a
                     href={project.url}
-                    className="text-sm text-neutral-400 italic"
+                    className="inline-flex items-center text-sm text-neutral-400 italic cursor-pointer hover:underline"
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.title} live preview`}
                   >
                     (Live Preview)
                   </a>

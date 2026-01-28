@@ -6,7 +6,7 @@ const Navbar = ({ leftContent }) => {
   return (
     <nav className=" flex items-center justify-between animate__animated animate__fadeIn animate__slow w-full border-b-2 border-white">
       <div className="flex flex-shrink-0 items-center ">
-        {leftContent}
+        {leftContent ?? "Omkar Deota"}
       </div>
 
       <div className="m-8 flex items-center justify-center gap-4 text-2xl">

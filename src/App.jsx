@@ -11,6 +11,7 @@ import Achievements from "./Component/Achievements";
 const App = () => {
   const [progress, setProgress] = useState(0);
   const [stage, setStage] = useState("overlay"); // overlay -> docking -> done
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const isLoading = stage !== "done";
   const isDocking = stage === "docking";
@@ -30,31 +31,64 @@ const App = () => {
   }, [stage]);
 
   useEffect(() => {
-    if (progress < 100 || stage !== "overlay") return;
+    const handleScroll = () => {
+      const doc = document.documentElement;
+      const scrollTop = doc.scrollTop || document.body.scrollTop;
+      const scrollHeight = doc.scrollHeight || document.body.scrollHeight;
+      const clientHeight = doc.clientHeight;
+      const total = Math.max(scrollHeight - clientHeight, 0);
+      const next = total > 0 ? (scrollTop / total) * 100 : 0;
+      setScrollProgress(next);
+    };
 
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (progress < 100 || stage !== "overlay") return;
     setStage("docking");
+  }, [progress, stage]);
+
+  useEffect(()=>{
+    if (stage !== "docking") return;
+  
     const timer = setTimeout(() => {
       setStage("done");
     }, 700);
 
     return () => clearTimeout(timer);
-  }, [progress, stage]);
+  }, [ stage]);
 
   const navLeftContent = useMemo(() => {
-    if (!isDocking) return null;
+    if (isOverlayStage) return null;
 
     return (
       <motion.div
         layoutId="loading-chip"
-        className="ml-4 px-4 py-2 text-4xl font-semibold tracking-wider text-white"
+         className={`ml-4 px-4 py-2 font-semibold tracking-wider text-white ${
+          isDocking ? "text-4xl" : "text-2xl md:text-4xl"
+        }`}
       >
         Omkar Deota
       </motion.div>
     );
-  }, [isDocking]);
+  }, [isDocking, isOverlayStage]);
 
   return (
     <LayoutGroup>
+      <div className="pointer-events-none fixed inset-x-0 top-0 z-[20000] h-2 rounded-4xl">
+        <div
+          className="h-full bg-gradient-to-r from-orange-600  to-red-700"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
       <motion.main
         initial={false}
         animate={{
@@ -76,7 +110,7 @@ const App = () => {
         {isLoading && (
           <motion.div
             key="loading-overlay"
-            className={`fixed inset-0 z-[10000] flex items-center justify-center px-6 ${
+            className={`fixed inset-0 z-[10000] flex items-center justify-center px-6 max-md:hidden ${
               isDocking ? "bg-stone-950/30" : "bg-stone-950/85"
             }`}
             initial={{ opacity: 1 }}
